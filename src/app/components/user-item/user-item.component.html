@@ -1,0 +1,53 @@
+<div class="user-item"
+     (click)="showUser = !showUser; showCredentials = false;">
+    @if(!showUser) {
+    <img class="user-item__image"
+         alt="user_img"
+         [src]="user().imageSrc" />
+    <p class="user-item__name">
+        {{ user().firstname }} {{ user().lastname }}
+    </p>
+
+    <p class="user-item__email">{{ user().email }}</p>
+
+    <p class="user-item__phone">{{ user().phone }}</p>
+
+    <p class="user-item__nat">{{ user().nat }} {{ user().country?.flag }}
+        {{ userService.currentFilter !== 'nationality' ? '('+nationalitiesCount+')' : '' }}</p>
+
+    } @else {
+    <div class="user-details">
+        <img alt="user_img"
+             [src]="user().imageSrc" />
+
+        <div class="user-details__col">
+            <p class="user-details__name">
+                {{ user().firstname }} {{ user().lastname }}
+            </p>
+
+            <p class="user-details__email">{{ user().email }}</p>
+        </div>
+
+        <div class="user-details__col">
+            <p class="user-details__phone">{{ user().phone }}</p>
+
+            <p class="user-details__nat">
+                {{ user().country?.name }}
+                {{ user().country?.flag }}
+                {{ userService.currentFilter !== 'nationality' ? '('+nationalitiesCount+')' : '' }}</p>
+        </div>
+
+        <div class="user-details__col password"
+             (click)="showCredentials = !showCredentials; $event.stopPropagation()">
+            <h3>
+                {{lang.entries?.UserItemComponent?.credentials}}
+                {{ showCredentials ? visibility.unlocked : visibility.locked }}
+            </h3>
+            <p class="user-details__username">{{ privacy(user().login?.username, showCredentials) }}</p>
+            <p class="user-details__password">{{ privacy(user().login?.password, showCredentials) }}</p>
+        </div>
+
+    </div>
+    }
+
+</div>

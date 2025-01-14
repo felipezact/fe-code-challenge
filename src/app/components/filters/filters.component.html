@@ -1,0 +1,29 @@
+<div class="filter-container">
+    <div class="filters">
+        <input type="text"
+               [placeholder]="lang.entries?.FiltersComponent?.search"
+               (input)="search($event)" />
+        @for (item of filters; track $index) {
+        <div class="filter"
+             [ngClass]="{'selected-filter': item === currentFilter}"
+             (click)="filter(item)">
+            {{lang.entries?.FiltersComponent?.[item]}}
+        </div>
+        }
+    </div>
+    <div class="alphabet">
+        @for (l of userService.alphabetList; track $index) {
+        <div class="scroll-to"
+             (click)="scrollTo(l)">
+            {{ lang.entries?.SharedComponent?.[l] || l }}
+        </div>
+        }
+    </div>
+    <div class="alphabet">
+        @for (l of userService.countryList; track $index) {
+        <a [href]="'#'+l">
+            {{ l }}
+        </a>
+        }
+    </div>
+</div>

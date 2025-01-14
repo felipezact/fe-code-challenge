@@ -1,0 +1,9 @@
+{
+    "UserListComponent_loading": "Cargando…",
+    "UserListComponent_empty": "¡Vaya, tan vacío!",
+    "UserItemComponent_credentials": "Credenciales del usuario",
+    "FiltersComponent_alpha": "Alfabético",
+    "FiltersComponent_nationality": "Nacionalidad",
+    "FiltersComponent_search": "Buscar nombre de usuario",
+    "SharedComponent_internationalCharacters": "Caracteres internacionales"
+}

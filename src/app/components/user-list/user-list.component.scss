@@ -1,0 +1,96 @@
+@import "ease/ease-import.scss";
+
+:host {
+    .user-list {
+        background-color: $color-white;
+        border-radius: 18px;
+        border: 6px solid $color-sky;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 60%;
+        padding: 12px;
+        margin-bottom: 32px;
+        .user-list__container {
+            max-height: 800px;
+            overflow: auto;
+        }
+        .loading {
+            text-align: center;
+            margin: 0 auto;
+        }
+        img {
+            margin: 0 auto;
+            height: 50px;
+            width: 50px;
+            padding: 16px;
+            -webkit-animation: spinner 2.5s ease-in-out infinite alternate;
+            animation: spinner 2.5s ease-in-out infinite alternate;
+        }
+        h1 {
+            text-transform: capitalize;
+            padding: 12px;
+        }
+    }
+
+    .to-top {
+        bottom: 0;
+        cursor: pointer;
+        margin: 24px;
+        position: fixed;
+        right: 0;
+        padding: 8px 10px;
+        font-size: 24px;
+        font-weight: bolder;
+        border-radius: 50%;
+        background-color: $color-white;
+        opacity: 0;
+    }
+
+    .show-scrollTop {
+        opacity: 1;
+        transition: all 1s ease-in-out alternate;
+    }
+
+    @keyframes spinner {
+        70% {
+            -webkit-transform: rotate(720deg) scale(0.9); /* Saf3.1+, Chrome */
+            -moz-transform: rotate(720deg) scale(0.9); /* FF3.5+ */
+            -ms-transform: rotate(720deg) scale(0.9); /* IE9 */
+            -o-transform: rotate(720deg) scale(0.9); /* Opera 10.5+ */
+            transform: rotate(720deg) scale(0.9);
+        }
+
+        80% {
+            -webkit-transform: rotate(720deg) scale(1.1); /* Saf3.1+, Chrome */
+            -moz-transform: rotate(720deg) scale(1.1); /* FF3.5+ */
+            -ms-transform: rotate(720deg) scale(1.1); /* IE9 */
+            -o-transform: rotate(720deg) scale(1.1); /* Opera 10.5+ */
+            transform: rotate(720deg) scale(1.1);
+        }
+
+        85% {
+            -webkit-transform: rotate(720deg) scale(1); /* Saf3.1+, Chrome */
+            -moz-transform: rotate(720deg) scale(1); /* FF3.5+ */
+            -ms-transform: rotate(720deg) scale(1); /* IE9 */
+            -o-transform: rotate(720deg) scale(1); /* Opera 10.5+ */
+            transform: rotate(720deg) scale(1);
+        }
+
+        90% {
+            -webkit-transform: rotate(720deg) scale(1.1); /* Saf3.1+, Chrome */
+            -moz-transform: rotate(720deg) scale(1.1); /* FF3.5+ */
+            -ms-transform: rotate(720deg) scale(1.1); /* IE9 */
+            -o-transform: rotate(720deg) scale(1.1); /* Opera 10.5+ */
+            transform: rotate(720deg) scale(1.1);
+        }
+
+        100% {
+            -webkit-transform: rotate(720deg) scale(1); /* Saf3.1+, Chrome */
+            -moz-transform: rotate(720deg) scale(1); /* FF3.5+ */
+            -ms-transform: rotate(720deg) scale(1); /* IE9 */
+            -o-transform: rotate(720deg) scale(1); /* Opera 10.5+ */
+            transform: rotate(720deg) scale(1);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "UserListComponent_loading": "Laden…",
+    "UserListComponent_empty": "Wow, so leer!",
+    "UserItemComponent_credentials": "Benutzeranmeldeinformationen",
+    "FiltersComponent_alpha": "Alphabetisch",
+    "FiltersComponent_nationality": "Nationalität",
+    "FiltersComponent_search": "Benutzernamen suchen",
+    "SharedComponent_internationalCharacters": "Internationale Zeichen"
+}

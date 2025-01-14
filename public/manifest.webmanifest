@@ -1,0 +1,10 @@
+{
+    "name": "code-challenge",
+    "short_name": "code-challenge",
+    "theme_color": "#4173a5",
+    "background_color": "#fafafa",
+    "display": "standalone",
+    "scope": "./",
+    "start_url": "./",
+    "icons": []
+}

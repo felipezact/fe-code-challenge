@@ -1,0 +1,56 @@
+@import "ease/ease-import.scss";
+
+.filter-container {
+    margin: 0 auto;
+    max-width: 60%;
+    padding: 32px 0;
+
+    .filters {
+        display: flex;
+        justify-content: flex-start;
+        gap: 16px;
+        padding: 16px 0;
+
+        .filter {
+            padding: 8px;
+            background-color: $color-white;
+            color: $color-steel;
+            white-space: nowrap;
+            border-radius: 16px;
+            cursor: pointer;
+            &:hover {
+                background-color: $color-sky;
+                color: $color-steel;
+            }
+        }
+
+        .selected-filter {
+            background-color: $color-slate;
+            color: $color-white;
+        }
+    }
+
+    .alphabet {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0px 8px;
+        white-space: nowrap;
+        text-transform: capitalize;
+        .scroll-to {
+            cursor: pointer;
+            color: $color-steel;
+            font-size: 100%;
+            &:hover {
+                transform: scale(1.15);
+                color: $color-slate;
+            }
+        }
+    }
+
+    input {
+        padding: 8px;
+        border-radius: 12px;
+    }
+}

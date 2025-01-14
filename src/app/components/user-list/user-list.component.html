@@ -1,0 +1,33 @@
+@if (users()?.length > 0) {
+    @for (user of users(); track $index) {
+        <article class="user-list" >
+            <h1 [id]="user.key.value"> {{lang.entries?.SharedComponent?.[user.key.label] || user.key.label }} ({{user.pageSize}})</h1>
+            <div class="user-list__container" (scroll)="onScroll($event, user)">
+                @for (data of user.data; track $index;) {
+                    @if ($index <= user.page) {
+                        @for (u of data; track $index;) {
+                            <app-user-item [user]="u" />
+                        }
+                    }
+                }
+            </div>
+        </article>
+    }
+    <div class="to-top" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+        ↑
+    </div>
+    
+} @else {
+    <article class="user-list">
+        <img src="zact.svg" alt="empty">
+        <p class="loading">
+            @if (userService.loading) {
+                {{lang.entries?.UserListComponent?.loading}}
+            } @else {
+                {{lang.entries?.UserListComponent?.empty}}
+            }
+        </p>
+    </article>
+}
+
+  

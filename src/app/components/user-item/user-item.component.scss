@@ -1,0 +1,111 @@
+@import "ease/ease-import.scss";
+
+:host {
+    .user-item {
+        align-items: center;
+        border-bottom: 1px solid $color-fog;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 12px;
+        color: $color-night;
+        -webkit-animation: detailing 0.25s ease-in-out alternate;
+        animation: detailing 0.25s ease-in-out alternate;
+        &:hover {
+            background-color: $color-sky;
+        }
+
+        &__image {
+            border-radius: 20%;
+            height: 40px;
+            width: 40px;
+        }
+
+        &__name,
+        &__email,
+        &__phone {
+            margin: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        &__name {
+            flex: 1;
+            min-width: 100px;
+        }
+
+        &__email {
+            width: 220px;
+        }
+
+        &__phone {
+            width: 110px;
+        }
+
+        &__nat {
+            margin-left: 12px;
+            text-align: right;
+            width: 80px;
+        }
+    }
+
+    .user-details {
+        display: flex;
+        padding: 12px;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        background-color: $color-fog;
+        border-radius: 16px;
+        -webkit-animation: detailing 0.25s ease-in-out alternate;
+        animation: detailing 0.25s ease-in-out alternate;
+        h3 {
+            white-space: nowrap;
+        }
+
+        .password {
+            padding: 12px;
+            border-radius: 16px;
+            cursor: pointer;
+            &:hover {
+                background-color: $color-white;
+                color: $color-slate;
+                h3 {
+                    color: $color-slate;
+                }
+            }
+        }
+
+        .user-details__col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 0 4px;
+        }
+
+        img {
+            width: 100px;
+            border-radius: 18px;
+            border: 6px solid $color-sky;
+        }
+    }
+    @keyframes detailing {
+        0% {
+            -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+            -moz-transform: scale(0.5); /* FF3.5+ */
+            -ms-transform: scale(0.5); /* IE9 */
+            -o-transform: scale(0.5); /* Opera 10.5+ */
+            transform: scale(0.5);
+        }
+
+        100% {
+            -webkit-transform: scale(1); /* Saf3.1+, Chrome */
+            -moz-transform: scale(1); /* FF3.5+ */
+            -ms-transform: scale(1); /* IE9 */
+            -o-transform: scale(1); /* Opera 10.5+ */
+            transform: scale(1);
+        }
+    }
+}

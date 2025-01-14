@@ -1,0 +1,21 @@
+<header id="header">
+    <img src="logo.svg"
+         alt="logo">
+</header>
+<app-filters></app-filters>
+<app-user-list [users]="usersService.users"></app-user-list>
+
+<form [formGroup]="form">
+    <div class="lang-selector">
+        <select disableRipple
+                (change)="lang.updateLocale($event)"
+                formControlName="language"
+                fullWidth=false>
+            @for (l of lang.locales; track $index) {
+            <option [value]="l.code">
+                {{l.flag}} {{l.name}}
+            </option>
+            }
+        </select>
+    </div>
+</form>
